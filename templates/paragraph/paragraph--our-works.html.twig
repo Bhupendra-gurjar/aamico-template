@@ -1,0 +1,37 @@
+<section class="our-works bg-white">
+  <div class="container">
+    <div class="row text-center">
+      <div class="col-md-12">
+        <h4>{{ paragraph.field_text.0.value|raw }}</h4>
+        <h2>{{ paragraph.field_text.1.value|raw }}</h2>
+      </div>
+    </div>
+    <div class="row">
+      {% for i in 0..2 %}
+        <div class="column">
+          {% for key, item in paragraph.field_our_work_inner %}
+            {% if loop.first  and i == 0 %}
+              <div class="item">
+                <img src="{{ file_url(item.entity.field_image.entity.uri.value)}}" alt="" class="img-fluid">
+              </div>
+            {% endif %}
+          {% endfor %} 
+          {% for key, item in paragraph.field_our_work_inner %}
+            {% if key > 0 and key < 3 and i == 1 %}
+              <div class="item">
+                <img src="{{ file_url(item.entity.field_image.entity.uri.value)}}" alt="" class="img-fluid">
+              </div>
+            {% endif %}
+          {% endfor %}
+          {% for key, item in paragraph.field_our_work_inner %}
+            {% if key > 2 and i == 2 %}
+              <div class="item">
+                <img src="{{ file_url(item.entity.field_image.entity.uri.value)}}" alt="" class="img-fluid">
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

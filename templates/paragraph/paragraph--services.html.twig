@@ -1,0 +1,21 @@
+<section class="services-sec bg-white">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        {{ content.field_service }}
+      </div>
+      <div class="col-md-6">
+        <div class="row">
+        {% for item in paragraph.field_inner_service %}
+          <div class="col-md-6">
+            <div class="bg-white">
+              <span>{{ item.entity.field_text.0.value|raw }}</span>
+              <h4>{{ item.entity.field_text.1.value|raw }}</h4>
+              <h5>{{ item.entity.field_text.2.value|raw }}</h5>
+            </div>
+          </div>
+          {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,22 @@
+<section class="process-sec">
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+     <h4>{{ paragraph.field_text.value }}</h4>
+      <h2>{{ paragraph.field_header_medium.value|raw }}</h2>
+      <p>{{ paragraph.field_inner_desc.value|raw }}</p>
+    </div>
+    <div class="col-md-6 steps">
+      <div class="row"> 
+      {% for item in paragraph.field_process_inner %}
+        <div class="col-md-6">
+          <img src="{{  file_url(item.entity.field_image_inner.entity.uri.value) }}" class="img-fluid" alt="">
+          <h4>{{ item.entity.field_inner_title.value|raw }}</h4>
+          <p>{{ item.entity.field_inner_desc.value|raw }}</p>
+        </div>
+       {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+</section>

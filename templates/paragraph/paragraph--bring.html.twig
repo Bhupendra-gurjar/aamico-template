@@ -1,0 +1,16 @@
+<section class="we-bring-sec">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <h2>{{ paragraph.field_text.value|raw }}</h2>
+        <p>{{ paragraph.field_description.value|raw }}</p>
+        <a href="" class="btn-red">{{ paragraph.field_link.title }}</a>
+      </div>
+      <div class="col-md-6 p-md-0">
+       
+        <img src="{{ file_url(paragraph.field_image.entity.uri.value)}}" class="img-fluid h-100 w-100" alt="">
+      </div>
+    </div>
+  </div>
+</section>
+

@@ -1,0 +1,16 @@
+type: theme
+base theme: false
+core_version_requirement: ^9 || ^10
+
+name: 'aamico'
+description: 'A Drupal based sub-theme.'
+package: 'custom'
+libraries:
+  - aamico/global-styling
+
+regions:
+  header-top: 'Header-Top'
+  logo: 'LOGO'
+  navigation: 'Navigation'
+  content: 'Content'
+  footer: 'Footer'

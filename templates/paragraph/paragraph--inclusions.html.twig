@@ -1,0 +1,17 @@
+<section class="inclusions-sec">
+<div class="container">
+    <div class="row text-center">
+        <h4>{{ paragraph.field_text.value|raw}}</h4>
+        <h2>{{ paragraph.field_inner_title.value|raw}}</h2>
+    </div>
+    <div class="row">
+        {% for item in paragraph.field_inner_inclusion %}
+        <div class="col-md-3">
+            <div class="img-sec"><img src="{{ file_url(item.entity.field_image.entity.uri.value )}}" class="img-fluid" alt="" >
+            </div>
+            <h4>{{ item.entity.field_text.value|raw }}</h4>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+</section>

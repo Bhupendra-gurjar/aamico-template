@@ -1,0 +1,15 @@
+<section class="contact-details">
+<div class="container">
+  <div class="row">
+    {% for key, item in paragraph.field_contact_inner %}
+      <div class="col-md-4 dark-yellow ">
+        <img src="{{ file_url(item.entity.field_image_inner.entity.uri.value)}}" class="img-fluid" alt="">
+        <div class="text">
+           <h4>{{ item.entity.field_inner_title.value|raw }}</h4>
+               {{ item.entity.field_inner_desc.value|raw }}
+         </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+</section>

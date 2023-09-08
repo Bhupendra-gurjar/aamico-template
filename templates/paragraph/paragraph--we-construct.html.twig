@@ -1,0 +1,34 @@
+<section class="we-construct-sec">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="row">
+          <div class="col-lg-6 yellow">
+            <h1>{{ paragraph.field_heading_3.0.value }}</h1>
+            <h3>{{ paragraph.field_heading_3.1.value }}</h3>
+          </div>
+          <div class="col-lg-6 red">
+            <h1>{{ paragraph.field_heading_3.2.value|raw }}</h1>
+            <h3>{{ paragraph.field_heading_3.3.value }}</h3>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 bg-white">
+        <div class="bg-white">
+          <h2>{{ paragraph.field_heading_3.4.value }}</h2>
+         {% for item in paragraph.field_inner_descr %}
+          <div class="row">
+            <div class="col-lg-3">
+              <img src="{{ file_url(item.entity.field_image_inner.entity.uri.value)}}" class="img-fluid" alt="">
+            </div>
+            <div class="col-lg-9">
+              <h4>{{ item.entity.field_inner_title.value|raw }}</h4>
+              <p>{{ item.entity.field_inner_desc.value|raw }}</p>
+            </div>
+          </div>
+        {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
